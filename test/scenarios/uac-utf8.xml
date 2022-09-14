@@ -26,7 +26,7 @@
     <![CDATA[
 
       INVITE sip:[service]@[remote_ip]:[remote_port] SIP/2.0
-      Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
+      Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch],SIP/2.0/UDP 100.24.198.20:5060;branch=z9hG4bK6a23024c_57a5b08a_ca2bb897-7acf-49b8-9c7e-24371d8f61381271884748_11.14.9,SIP/2.0/TCP 10.0.0.10:5080;branch=z9hG4bK6a23024c_57a5b08a_ca2bb897-7acf-49b8-9c7e-24371d8f61381271884748zsd_11.14.9,SIP/2.0/UDP 10.8.164.156:5080;branch=z9hG4bK6a23024c_57a5b08a_ca2bb897-7acf-49b8-9c7e-24371d8f6138
       From: "Virtuális kolléga" <sip:sipp@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
       To: [service] <sip:[service]@[remote_ip]:[remote_port]>
       Call-ID: [call_id]
@@ -91,7 +91,7 @@
     <![CDATA[
 
       BYE [next_url] SIP/2.0
-      Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch]
+      Via: SIP/2.0/[transport] [local_ip]:[local_port];branch=[branch],SIP/2.0/UDP 100.24.198.20:5060;branch=z9hG4bK6a23024c_57a5b08a_ca2bb897-7acf-49b8-9c7e-24371d8f61381271884748_11.14.9,SIP/2.0/TCP 10.0.0.10:5080;branch=z9hG4bK6a23024c_57a5b08a_ca2bb897-7acf-49b8-9c7e-24371d8f61381271884748zsd_11.14.9,SIP/2.0/UDP 10.8.164.156:5080;branch=z9hG4bK6a23024c_57a5b08a_ca2bb897-7acf-49b8-9c7e-24371d8f6138
       From: sipp <sip:sipp@[local_ip]:[local_port]>;tag=[pid]SIPpTag00[call_number]
       To: [service] <sip:[service]@[remote_ip]:[remote_port]>[peer_tag_param]
       Call-ID: [call_id]

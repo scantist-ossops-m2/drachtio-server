@@ -62,7 +62,7 @@ function runFixture(f) {
         let uasPromise, scriptPromise, uacPromise;
         let script;
         if (f.uas) {
-          let cmd = `sipp -sf ./${f.uas.name} -i 127.0.0.1 -p ${f.uas.port} -m 1`;
+          let cmd = `sipp -sf ./${f.uas.name} -i 127.0.0.1 -p ${f.uas.port} -m 1 -trace_msg`;
           if (f.uas.transport === 'tcp') cmd += ' -t t1';
           logger.debug(`starting UAS scenario: ${cmd}`);
           uasPromise = execCmd(cmd, {cwd: './scenarios'});
@@ -77,11 +77,11 @@ function runFixture(f) {
           if (f.script.function) {
             const args = f.script.args || (f.uas ? `127.0.0.1:${f.uas.port}` : undefined);
             scriptPromise = script[f.script.function](args, f.script.opts || {});
-            await delay(750);
+            // await delay(750);
           }
         }
         if (f.uac) {
-          let cmd = `sipp -sf ./${f.uac.name} ${f.uac.target} -m 1`;
+          let cmd = `sipp -sf ./${f.uac.name} ${f.uac.target} -m 1 -trace_msg`;
           if (f.uac.transport === 'tcp') cmd += ' -t t1';
           logger.debug(`starting UAC scenario: ${cmd}`);
           uacPromise = execCmd(cmd, {cwd: './scenarios'});
