@@ -515,9 +515,7 @@ namespace drachtio {
              }
 
             //prevent looping messages
-            if (!normalizeSipUri( requestUri, 0 )) {
-                throw std::runtime_error(string("invalid request-uri: ") + requestUri ) ;
-            }
+            normalizeSipUri( requestUri, 0 ) ;
             if( isLocalSipUri( requestUri ) ) {
                 throw std::runtime_error("can not send request to myself") ;
             }
